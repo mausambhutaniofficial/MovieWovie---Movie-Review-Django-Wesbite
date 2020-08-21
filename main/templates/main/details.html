@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    <title>Movie Details</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{ movie.image }}" class="img-fluid">
+                    
+                </div>
+                
+                <div class="col-md-8">
+                    <h3 class=" display-4 mt-3">{{ movie.name }}</h3>
+                    <hr>
+                    <p>{{ movie.description }}</p>
+                    <hr>
+                    <h5>Directed By : {{ movie.director }}</h5>
+                    <h5>Lead Cast : {{ movie.cast }}</h5>
+                    <h5>Average Rating : {{ movie.averageRating }}</h5>
+                    <a href="{% url 'main:edit_movies' movie.id %}" class="btn btn-warning">Edit Movie</a>
+                    <a href="{% url 'main:delete_movies' movie.id %}" class="btn btn-danger">Delete Movie</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    <title>MovieWovie</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="card mt-5 bd-card">
+        <div class="card-body">
+            <div class="row">
+                {% for movie in movies %}
+                    <div class="col-md-4">
+                        <div class="card mb-5">                        
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img src="{{ movie.image }}" class="img-fluid" width="75%">
+                                    <h3 class="mt-2">{{ movie.name }}</h3>
+                                    <hr>
+                                    <div class="text-right">
+                                        <i>{{ movie.release_date }}</i>
+                                    </div>
+                                </div>
+                                <a href="{% url 'main:detail' movie.id %}">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
