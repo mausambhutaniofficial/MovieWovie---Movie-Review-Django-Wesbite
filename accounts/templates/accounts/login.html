@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    <title>User Login</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="text-center">Welcome, Login Here! </h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-8 offset-2 mx-4">
+                        <label for="username">Username</label>
+                        <input type="text" placeholder="Your Username..." class="form-control" name="username">
+                        <label for="password">Password</label>
+                        <input type="password" placeholder="Your Password..." class="form-control" name="password">
+                        <br>
+                        {% if error %}
+                            <i style="color: red;">{{ error }}</i>
+                        {% endif %}
+                        <input type="submit" value="Login" class="btn btn-warning">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
