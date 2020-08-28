@@ -27,7 +27,7 @@ SECRET_KEY = '3=v@17ro8^xolrdw06ze073e%z1+srx@1#k6-a$ds=ywjfq1bk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://moviewovie.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['moviewovie.herokuapp.com/', 'localhost']
 
 
 # Application definition
