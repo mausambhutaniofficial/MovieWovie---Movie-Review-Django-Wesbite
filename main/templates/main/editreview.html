@@ -1,23 +1,26 @@
 {% extends 'main/base.html' %}
 {% load crispy_forms_tags %}
 {% block title %}
-    <title>Add Movies</title>
+    <title>Your Review</title>
 {% endblock title %}
 
 {% block content %}
 
-<div class="container">   
-    <br><br><br><br><br> 
+<div class="container">  
+    <br><br><br><br><br>  
     <div class="card">        
         <div class="card-content">            
-            <h3 class="mx-5 mb-5 mt-5">{{ controller_h  }}</h3>
+            <h3 class="mx-5 mb-5 mt-5">Edit Your Review</h3>
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="row">
                 <div class="col-md-8 offset-2 mx-4">
                     {{ form|crispy }}
+                    {% if error %}
+                        <strong style="color: red;">{{error}}</strong>
+                    {% endif %}
                 <div class="text-center">
-                    <button class="btn btn-warning mt-2 mb-5">{{ controller }}</button>
+                    <button class="btn btn-warning mt-2 mb-5">Save Changes</button>
                 </div> 
             </div>
             </form>

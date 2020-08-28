@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath Movie_Review_App Movie_Review_App.wsgi --log-file -

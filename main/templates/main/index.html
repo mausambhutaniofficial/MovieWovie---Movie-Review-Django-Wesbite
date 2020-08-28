@@ -6,16 +6,22 @@
 {% block content %}
 
 <div class="container">
+    
     <div class="card mt-5 bd-card">
+        
         <div class="card-body">
+            
             <div class="row">
                 {% for movie in movies %}
                     <div class="col-md-4">
+                        <br><br><br>
                         <div class="card mb-5">                        
+                            
                             <div class="card-body">
+                                
                                 <div class="text-center">
-                                    <img src="{{ movie.image }}" class="img-fluid" width="75%">
-                                    <h3 class="mt-2">{{ movie.name }}</h3>
+                                    <a href="{% url 'main:detail' movie.id %}"><img src="{{ movie.image }}" class="img-fluid" width="427" height="600"></a>
+                                    <a style="color: black;" href="{% url 'main:detail' movie.id %}"><h3 class="mt-2">{{ movie.name }}</h3></a>
                                     <hr>
                                     <div class="text-right">
                                         <i>{{ movie.release_date }}</i>
@@ -29,6 +35,7 @@
             </div>
         </div>
     </div>
+    
 </div>
 
 {% endblock content %}
